@@ -50,6 +50,17 @@ jobs:
         run: |
           ansible all -m ping
 
+      - name: Check Ansible files
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "Repository files:"
+          ls -la
+          echo "Ansible directory:"
+          ls -la ./devops/ansible/
+          echo "Playbook:"
+          cat ./devops/ansible/install-nginx.yaml
+
       - name: Run Ansible Playbooks
         working-directory: ./devops/ansible/
         run: |
